@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily Duty Cleaning Services - Professional cleaning services for homes and offices in Van Nuys, CA. Thorough cleaning with eco-friendly products.">
+    <title>Daily Duty Cleaning Services | Professional Cleaning</title>
+    <link rel="icon" href="house-cleaning.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary: #2E86AB;
+            --primary-dark: #1B6B93;
+            --secondary: #F18F01;
+            --accent: #A23B72;
+            --light: #F7F9FC;
+            --dark: #2B2D42;
+            --gray: #6C757D;
+            --light-gray: #E9ECEF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled .logo img {
+            height: 40px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled .logo h1 {
+            font-size: 1.3rem;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+            color: var(--dark);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(46, 134, 171, 0.3);
+            z-index: 1;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(46, 134, 171, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Swiper Slider */
+        .swiper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .feature-text p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-content h3 {
+            color: var(--primary);
+        }
+
+        .service-content p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .service-link i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon-large {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon-large {
+            background: var(--secondary);
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin: 1rem;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.1;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 3px solid var(--primary);
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Team Section */
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-img {
+            height: 40rem;
+            overflow: hidden;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .team-card:hover .team-img img {
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            padding: 1.5rem;
+        }
+
+        .team-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .team-info p {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .team-social {
+            display: none;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .team-social a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            background: var(--secondary);
+            transform: rotate(10deg);
+        }
+
+        .contact-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0;
+            height: 500px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(20%) contrast(110%);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 5% 2rem;
+            position: relative;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            color: white;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -8px;
+            left: 0;
+        }
+
+        .footer-col p {
+            color: #b3b3b3;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #b3b3b3;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b3b3b3;
+            font-size: 0.95rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(46, 134, 171, 0.3);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(46, 134, 171, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 1;
+            }
+            20% {
+                transform: scale(25, 25);
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(40, 40);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text, .about-image {
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 2rem;
+                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 100%;
+            }
+
+            nav a {
+                font-size: 1.1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.8rem;
+                font-size: 1rem;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .testimonial-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .testimonial-author {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+         /* Testimonial Slider Styles */
+    .testimonials-slider-section {
+        padding: 6rem 5%;
+        background-color: #f9f9f9;
+        position: relative;
+    }
+
+    .testimonial-swiper {
+        width: 100%;
+        margin: 0 auto;
+        padding: 2rem 0;
+        position: relative;
+    }
+
+    .testimonial-swiper .swiper-slide {
+        width: 100% !important;
+    }
+
+    .testimonial-swiper .swiper-wrapper {
+        width: 100% !important;
+    }
+
+    .testimonial-card {
+        background: white;
+        width: 100%;
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin: 1rem;
+        position: relative;
+        height: auto;
+    }
+
+    .testimonial-quote {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 4rem;
+        color: var(--primary);
+        opacity: 0.1;
+        line-height: 1;
+        font-family: serif;
+    }
+
+    .rating {
+        color: #FFD700;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        color: var(--dark);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .author-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        border: 3px solid var(--primary);
+    }
+
+    .author-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .author-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+        color: var(--dark);
+    }
+
+    .author-info p {
+        color: var(--gray);
+        font-size: 0.95rem;
+    }
+
+    /* Swiper Navigation Styles */
+    .swiper-button-prev, 
+    .swiper-button-next {
+        color: var(--primary);
+        background: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .swiper-button-prev:hover, 
+    .swiper-button-next:hover {
+        color: white;
+        background: var(--primary);
+        transform: scale(1.1);
+    }
+
+    .swiper-button-prev::after, 
+    .swiper-button-next::after {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .swiper-pagination-bullet {
+        background: #ccc;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+        .testimonial-card {
+            padding: 2rem 1.5rem;
+        }
+
+        .testimonial-author {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .swiper-button-prev, 
+        .swiper-button-next {
+            display: none;
+        }
+    }
+
+    .team-logo-container {
+        max-width: 1200px;
+        width: 100%;
+        height: 720px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    .team-logo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="header-container">
+            <div class="logo">
+                <img src="house-cleaning.png"  alt="Daily Duty Cleaning Services Logo">
+                <h1>Daily Duty <span>Cleaning Services</span></h1>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-choose-us">Why Choose Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section with Swiper Slider -->
+    <section class="hero" id="home">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img loading="lazy" src="person-taking-care-office-cleaning.jpg"  alt="Professional cleaning service">
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="professional-cleaning-service-person-cleaning-office-window.jpg"  alt="Clean home">
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="woman-is-holding-cleaning-product-gloves-rags-basin-white-wall.jpg"  alt="Office cleaning">
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="person-taking-care-office-cleaning.jpg"  alt="Office cleaning">
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="coffee-shop-small-business.jpg"  alt="Office cleaning">
+                </div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Professional Cleaning Services in Van Nuys</h1>
+            <p>We provide thorough, eco-friendly cleaning solutions for homes and offices, tailored to your schedule and needs.</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+            <a href="#services" class="btn btn-secondary">Our Services</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-title">
+            <h2>About Us</h2>
+            <p>Daily Duty Cleaning Services has been serving Van Nuys with professional cleaning since 2023</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Your Trusted Cleaning Partner</h3>
+                <p>At Daily Duty Cleaning Services, we believe a clean space is essential for health, productivity, and peace of mind. Our team of professional cleaners is dedicated to providing exceptional cleaning services tailored to your specific needs.</p>
+                <p>We take pride in our attention to detail and commitment to using environmentally friendly products that are safe for your family, pets, and the planet. Our cleaning professionals are thoroughly vetted, trained, and insured for your peace of mind.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i>✓</i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Professional Staff</h4>
+                            <p>All our cleaners are background-checked and trained</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i>♻</i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Eco-Friendly</h4>
+                            <p>We use environmentally safe cleaning products</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i>✓</i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Flexible Scheduling</h4>
+                            <p>Available when you need us, including weekends</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i>✓</i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Satisfaction Guaranteed</h4>
+                            <p>We're not happy until you're happy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="full-shot-people-cleaning-office.jpg"  alt="Our cleaning team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Comprehensive cleaning solutions tailored to your needs</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-img">
+                    <img loading="lazy" src="full-shot-man-pushing-elevator-button.jpg"  alt="Thorough cleaning service">
+                </div>
+                <div class="service-content">
+                    <h3>Thorough Cleaning</h3>
+                    <p>Dusting, sweeping, mopping, and sanitizing every corner of your home or office to ensure a spotless environment. We pay attention to all the details you might miss in your daily routine.</p>
+                    <a href="#contact" class="service-link">Schedule Cleaning <i>→</i></a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img">
+                    <img loading="lazy" src="pexels-karolina-grabowska-4239100.jpg"  alt="Bathroom cleaning service">
+                </div>
+                <div class="service-content">
+                    <h3>Bathroom & Kitchen Maintenance</h3>
+                    <p>Disinfecting surfaces, sinks, and appliances to keep them sparkling clean and hygienic. We tackle tough stains, grime, and soap scum in these high-traffic areas.</p>
+                    <a href="#contact" class="service-link">Request Service <i>→</i></a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img">
+                    <img loading="lazy" src="professional-cleaning-service-person-cleaning-office (2).jpg"  alt="Custom cleaning schedule">
+                </div>
+                <div class="service-content">
+                    <h3>Cleaning & Sanitizing</h3>
+                    <p>We thoroughly clean surfaces to remove dirt, dust, and grime, then sanitize with EPA-approved disinfectants to eliminate germs, viruses, and bacteria—keeping your home fresh and hygienic.</p>
+                    <a href="#contact" class="service-link">Create Schedule <i>→</i></a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img">
+                    <img loading="lazy" src="professional-cleaning-service-person-cleaning-office-window.jpg"  alt="Custom cleaning schedule">
+                </div>
+                <div class="service-content">
+                    <h3>Deep Disinfecting</h3>
+                    <p>For high-touch areas (doorknobs, countertops, light switches), we use hospital-grade disinfectants to kill 99.9% of germs, ensuring a safer, healthier living space for you and your family.</p>
+                    <a href="#contact" class="service-link">Create Schedule <i>→</i></a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img">
+                    <img loading="lazy" src="front-view-woman-cleaning-home.jpg"  alt="Custom cleaning schedule">
+                </div>
+                <div class="service-content">
+                    <h3>Personalized Schedules</h3>
+                    <p>Flexible options to match your daily needs, whether it's at home or work. Daily, weekly, bi-weekly, or one-time cleanings - we adapt to your lifestyle and preferences.</p>
+                    <a href="#contact" class="service-link">Create Schedule <i>→</i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us" id="why-choose-us">
+        <div class="section-title">
+            <h2>Why Choose Us</h2>
+            <p>What sets Daily Duty Cleaning Services apart from the competition</p>
+        </div>
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon-large">
+                    <i>♻</i>
+                </div>
+                <h3>Eco-Friendly Products</h3>
+                <p>We use environmentally safe products that are tough on dirt but gentle on the planet, your family, and pets.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-large">
+                    <i>✓</i>
+                </div>
+                <h3>Reliable Service</h3>
+                <p>Our team shows up on time, every time, with all the necessary equipment to get the job done right.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-large">
+                    <i>✓</i>
+                </div>
+                <h3>Customized Cleaning</h3>
+                <p>We tailor our services to your specific needs and preferences, ensuring complete satisfaction.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-large">
+                    <i>✓</i>
+                </div>
+                <h3>Thorough Training</h3>
+                <p>All our cleaners undergo rigorous training to meet our high standards of quality and attention to detail.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-slider-section" id="testimonials">
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+            <p>Hear from satisfied customers who trust us with their cleaning needs</p>
+        </div>
+        
+        <div class="swiper testimonial-swiper">
+            <div class="swiper-wrapper">
+                <!-- Testimonial Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                        <p class="testimonial-text">"Daily Duty Cleaning Services has transformed my home! Their attention to detail is incredible - they clean places I didn't even know needed cleaning. The team is always punctual, professional, and uses eco-friendly products."</p>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" loading="lazy" alt="Sarah Johnson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Van Nuys Resident</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Testimonial Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                        <p class="testimonial-text">"As a busy professional, I don't have time to clean my apartment properly. Daily Duty has been a lifesaver! They customized a cleaning schedule that works perfectly with my unpredictable hours."</p>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" loading="lazy" alt="Michael Chen">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Office Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Testimonial Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                        <p class="testimonial-text">"After trying several cleaning services, we finally found Daily Duty and won't use anyone else! They do an exceptional job with our medical office - paying special attention to high-touch surfaces."</p>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" loading="lazy" alt="Dr. Lisa Wong">
+                            </div>
+                            <div class="author-info">
+                                <h4>Dr. Lisa Wong</h4>
+                                <p>Medical Clinic Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Testimonial Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                        <p class="testimonial-text">"The move-out cleaning they did for my apartment was phenomenal! I got my full security deposit back thanks to their thorough work. The property manager even asked me for their contact information."</p>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" loading="lazy" alt="Jessica Martinez">
+                            </div>
+                            <div class="author-info">
+                                <h4>Jessica Martinez</h4>
+                                <p>Former Tenant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add pagination -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- Add navigation buttons -->
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="team-logo-container">
+            <img loading="lazy" src="7400904.jpg" alt="ourteam">
+        </div>
+        <div class="section-title">
+            <h2>Our Team</h2>
+            <p>Meet the professionals who make your space shine</p>
+        </div>
+        <div class="team-container">
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="person-taking-care-office-cleaning (1).jpg"  alt="Maria Rodriguez">
+                </div>
+                <div class="team-info">
+                    <h3>Maria Rodriguez</h3>
+                    <p>Head Cleaner</p>
+                    <div class="team-social">
+                        <a href="#"><i>f</i></a>
+                        <a href="#"><i>in</i></a>
+                        <a href="#"><i>t</i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="professional-cleaning-service-person-cleaning-office (2).jpg"  alt="James Wilson">
+                </div>
+                <div class="team-info">
+                    <h3>James Wilson</h3>
+                    <p>Office Cleaning Specialist</p>
+                    <div class="team-social">
+                        <a href="#"><i>f</i></a>
+                        <a href="#"><i>in</i></a>
+                        <a href="#"><i>t</i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="smiling-young-woman-housewife-cleaning-furniture-kitchen.jpg"  alt="Lisa Chen">
+                </div>
+                <div class="team-info">
+                    <h3>Lisa Chen</h3>
+                    <p>Eco-Cleaning Expert</p>
+                    <div class="team-social">
+                        <a href="#"><i>f</i></a>
+                        <a href="#"><i>in</i></a>
+                        <a href="#"><i>t</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch for a free quote or to schedule your cleaning service</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i>📍</i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Address</h3>
+                        <p>6730 Gerald Ave<br>Van Nuys, CA 91406</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i>📞</i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Phone</h3>
+                        <p><a href="tel:8182315367">(818) 231-5367</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i>✉️</i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <p><a href="mailto:dailyduty24@gmail.com">dailyduty24@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i>🕒</i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Hours</h3>
+                        <p>Monday - Friday: 7:00 AM - 7:00 PM<br>Saturday: 8:00 AM - 5:00 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="cleaningForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="residential">Residential Cleaning</option>
+                            <option value="commercial">Commercial Cleaning</option>
+                            <option value="deep">Deep Cleaning</option>
+                            <option value="move">Move In/Out Cleaning</option>
+                            <option value="custom">Custom Service</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" class="form-control" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Request Free Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.041994107418!2d-118.4487879243346!3d34.18394507311958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2971b4a3c5e1f%3A0x3a1f1a3a3b3b3b3b!2s6730%20Gerald%20Ave%2C%20Van%20Nuys%2C%20CA%2091406!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" ></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Daily Duty Cleaning</h3>
+                <p>Providing professional, eco-friendly cleaning services to Van Nuys and surrounding areas since 2023.</p>
+                <div class="social-links">
+                    <a href="#"><i>f</i></a>
+                    <a href="#"><i>in</i></a>
+                    <a href="#"><i>t</i></a>
+                    <a href="#"><i>ig</i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-choose-us">Why Choose Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Residential Cleaning</a></li>
+                    <li><a href="#services">Commercial Cleaning</a></li>
+                    <li><a href="#services">Deep Cleaning</a></li>
+                    <li><a href="#services">Move In/Out Cleaning</a></li>
+                    <li><a href="#services">Eco-Friendly Cleaning</a></li>
+                    <li><a href="#services">Custom Cleaning Plans</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p>6730 Gerald Ave<br>Van Nuys, CA 91406</p>
+                <p><a href="tel:8182315367">(818) 231-5367</a></p>
+                <p><a href="mailto:dailyduty24@gmail.com">dailyduty24@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Daily Duty Cleaning Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+
+    // Initialize Testimonial Swiper
+    document.addEventListener('DOMContentLoaded', function() {
+        const testimonialSwiper = new Swiper('.testimonial-swiper', {
+            // Optional parameters
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 20000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            
+            // If we need pagination
+            // pagination: {
+            //     el: '.swiper-pagination',
+            //     clickable: true,
+            // },
+            
+      
+            
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 768px
+                768: {
+                    slidesPerView: 2,
+                }
+            }
+        });
+    });
+
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Form submission
+        const cleaningForm = document.getElementById('cleaningForm');
+        cleaningForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your request! We will contact you shortly.');
+            cleaningForm.reset();
+        });
+
+        // Lazy loading for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = [].slice.call(document.querySelectorAll('img[]'));
+            
+            if ('IntersectionObserver' in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
