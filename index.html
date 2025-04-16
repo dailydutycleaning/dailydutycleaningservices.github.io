@@ -6,6 +6,7 @@
     <meta name="description" content="Daily Duty Cleaning Services - Professional cleaning services for homes and offices in Van Nuys, CA. Thorough cleaning with eco-friendly products.">
     <title>Daily Duty Cleaning Services | Professional Cleaning</title>
     <link rel="icon" href="house-cleaning.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -1635,42 +1636,76 @@
                         <p>Monday - Friday: 7:00 AM - 7:00 PM<br>Saturday: 8:00 AM - 5:00 PM<br>Sunday: Closed</p>
                     </div>
                 </div>
+                    <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa fa-instagram"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Instagram</h3>
+                        <p><a href="https://www.instagram.com/dailydutycleaning/">Instagram</a></p>
+                    </div>
+                </div>
             </div>
             <div class="contact-form">
-                <form id="cleaningForm">
+                <form id="contact-form">
                     <div class="form-group">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" class="form-control" required>
+                        <input name="email" type="text" id="name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <input name="email" type="email" id="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" class="form-control" required>
+                        <input name="tel" type="tel" id="phone" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="service">Service Needed</label>
-                        <select id="service" class="form-control" required>
+                        <select name="evt" id="service" class="form-control" required>
                             <option value="">Select a service</option>
-                            <option value="residential">Residential Cleaning</option>
-                            <option value="commercial">Commercial Cleaning</option>
-                            <option value="deep">Deep Cleaning</option>
-                            <option value="move">Move In/Out Cleaning</option>
-                            <option value="custom">Custom Service</option>
+                            <option name="Residential Cleaning" value="residential">Residential Cleaning</option>
+                            <option name="Commercial Cleaning" value="commercial">Commercial Cleaning</option>
+                            <option name="Deep Cleaning" value="deep">Deep Cleaning</option>
+                            <option name="Move In/Out Cleaning" value="move">Move In/Out Cleaning</option>
+                            <option name="Custom Service" value="custom">Custom Service</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message">Additional Details</label>
-                        <textarea id="message" class="form-control" rows="5"></textarea>
+                        <textarea name="message" id="message" class="form-control" rows="5"></textarea>
                     </div>
-                    <button type="submit" class="btn">Request Free Quote</button>
+                    <button value="send" type="submit" class="btn">Request Free Quote</button>
                 </form>
             </div>
         </div>
     </section>
 
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "f8Iapl1C7gUNh6X2q",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_zafam2j', 'template_kx5k2sj', this)
+                    .then(() => {
+                        alert('Thank you for your message! We will contact you soon.');
+                        document.getElementById('contact-form').reset();
+                    }, (error) => {
+                        alert('ERROR!');
+                    });
+            });
+        }
+    </script>
     <!-- Map Section -->
     <section class="map-section">
         <div class="map-container">
@@ -1688,7 +1723,7 @@
                     <a href="#"><i>f</i></a>
                     <a href="#"><i>in</i></a>
                     <a href="#"><i>t</i></a>
-                    <a href="#"><i>ig</i></a>
+                    <a href="https://www.instagram.com/dailydutycleaning/"><i>ig</i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -1817,15 +1852,6 @@
             } else {
                 backToTop.classList.remove('active');
             }
-        });
-
-        // Form submission
-        const cleaningForm = document.getElementById('cleaningForm');
-        cleaningForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Here you would typically send the form data to your server
-            alert('Thank you for your request! We will contact you shortly.');
-            cleaningForm.reset();
         });
 
         // Lazy loading for images
